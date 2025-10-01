@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Hero.css';
 import { FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 const Hero = () => {
+  const [showEmail, setShowEmail] = useState(false);
+
+  const handleEmailClick = () => {
+    setShowEmail(true);
+  };
+
+  const closePopup = () => {
+    setShowEmail(false);
+  };
+
   return (
     <section className="hero-section" id="home">
       <div className="hero-content">
@@ -28,19 +38,27 @@ const Hero = () => {
           >
             <FaLinkedin />
           </a>
-          <a
-            href="mailto:your-email@gmail.com"
-            className="social-icon"
+
+          {/* Gmail icon triggers popup */}
+          <button
+            onClick={handleEmailClick}
+            className="social-icon email-button"
           >
             <FaEnvelope />
-          </a>
+          </button>
         </div>
       </div>
 
-      {/* Optional 3D / Animated Background */}
-      <div className="hero-background">
-        {/* Yahan particles ya 3D model add kar sakte ho */}
-      </div>
+      {/* Popup Modal */}
+      {showEmail && (
+        <div className="email-popup">
+          <div className="email-popup-content">
+            <span className="close-btn" onClick={closePopup}>&times;</span>
+            <h3>My Email</h3>
+            <p>parasbiltoria22@gmail.com</p>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
