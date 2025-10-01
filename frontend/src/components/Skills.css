@@ -1,0 +1,58 @@
+/* Skills Section ka base style */
+.skills-section {
+  padding: 5rem 5%;
+  background-color: #162447; /* Dusre sections se alag background */
+  text-align: center;
+  overflow: hidden; /* Animation ke liye */
+}
+
+/* Skills ko grid layout mein dikhane ke liye */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap; /* Agar skills zyada ho toh agli line mein aa jayenge */
+  justify-content: center;
+  gap: 1.5rem; /* Har skill ke beech mein space */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.skills-section .section-titleh {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color:  #00ffff; /* Accent color */
+}
+
+/* Har ek skill item ka style */
+.skill-item {
+  background-color: #1f4068;
+  color: #e0e0e0;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: 1px solid #1f4068;
+  cursor: default;
+  
+  /* Animation ke liye initial state */
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  transition: 
+    transform 0.4s ease, 
+    background-color 0.3s ease, 
+    opacity 0.4s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Jab section view mein aayega, tab yeh class add hogi */
+.skill-item.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Hover effect */
+.skill-item:hover {
+  transform: translateY(-5px) scale(1.05);
+  background-color: #e94560;
+  border-color: #e94560;
+  box-shadow: 0 8px 20px rgba(233, 69, 96, 0.25);
+}
