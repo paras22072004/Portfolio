@@ -46,7 +46,7 @@
 
 /* Hero Content Text */
 .hero-title {
-  font-size: 48px;
+  font-size: 68px;
   font-weight: bold;
   margin-bottom: 20px;
 }
@@ -56,7 +56,7 @@
 }
 
 .hero-subtitle {
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 10px;
   color: #ddd;
 }
